@@ -1,0 +1,28 @@
+<p>student-list works!</p>
+
+
+@for (item of listOfStudent ; track item.ID)
+{
+    <li>{{item.ID}}- {{item.firstName}}- {{item.lastName}} </li>
+    <button (click)="show(item.ID)">עריכה</button>
+
+@if(selected==item.ID) {<app-current-student-details 
+    
+    (saveStudent)="updateDetailesFather($event)"
+    ></app-current-student-details>}
+ @if(selected==item.ID && item.isActive == false){
+    {{ item.dateOfLeave }}
+    }
+  
+}
+
+
+<button (click)="edit()">הוספה</button>
+@if(selected==-1){<app-current-student-details
+    (saveStudent)="saveDetailesFather($event)"
+
+></app-current-student-details
+>
+}
+
+
