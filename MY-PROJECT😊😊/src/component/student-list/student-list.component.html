@@ -1,0 +1,59 @@
+<p>student-list works!</p>
+
+<ng-container *ngTemplateOutlet="mytemplate"></ng-container>
+
+
+@for (item of listOfStudent ; track item.ID)
+{
+    <li [style.color]="studentColors[item.ID]|| 'black'">
+        {{item.ID}}- {{item.firstName}}- {{item.lastName}} 
+        <br>
+        @if(item.IsPaied==true){
+            <app-courses-list ></app-courses-list>
+        }
+        <br>
+<button (click)="show(item.ID)">עריכה</button>
+<button (click)="delet(item.ID)">מחיקה</button>
+
+
+@if(selected==item.ID) {<app-current-student-details
+    (saveStudent)="updateDetailesFather($event)">
+</app-current-student-details>}
+@if(selected==item.ID && item.isActive == false){
+{{ item.dateOfLeave }}
+}
+
+<br>
+
+<app-infromation-popup></app-infromation-popup>
+<br>
+
+
+
+</li>
+
+}
+
+<ng-container *ngTemplateOutlet="mytemplate"></ng-container>
+
+
+<br>
+<br>
+
+<button (click)="edit()">הוספה</button>
+@if(selected==-1){<app-current-student-details (saveStudent)="saveDetailesFather($event)">
+</app-current-student-details>
+}
+
+
+
+
+
+
+<ng-template #mytemplate>
+    רשימת תלמידות<br>
+    ------------------------------------<br>
+    ------------------------------------
+</ng-template>
+
+

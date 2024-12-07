@@ -1,0 +1,20 @@
+
+
+<select multiple (change)="addCourse($event)">
+    @for (item of Mylist; track item) {
+    <option appCorsesStyle [subject]="item.Subject"  [value]="item.IdCourses" >
+      {{item.IdCourses}} - {{item.NameCourses}} - {{item.Subject}}
+    </option>
+    }
+  </select>
+
+
+  @for (item of studen_courses; track item){
+    
+     <li>{{item.IdCourses}}  {{item.NameCourses}}</li>
+    
+      
+  }
+  
+
+
