@@ -9,9 +9,9 @@ export class TeacherService {
   // constructor() { }
   private Teachers=[
     new Teacher(111,"Sara" , ["v1","a2","d3"]),
-    new Teacher(222,"Miriam",  ["b4","a3", "v2"]),
-    new Teacher(333,"Ester", ["b4","a1", "v2"]),
-    new Teacher(444,"Rachel", ["c4","a3", "v4"]),
+    new Teacher(222,"Miriam",  ["b4","a3","v2"]),
+    new Teacher(333,"Ester", ["b4","a1","v2"]),
+    new Teacher(444,"Rachel", ["c4","a3","v4"]),
   ]
 
   Add(t:Teacher){

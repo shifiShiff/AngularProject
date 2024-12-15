@@ -1,22 +1,38 @@
-
-<form (ngSubmit)="AddTeacher()">
+<form #myForm="ngForm" (ngSubmit)="AddTeacher()">
     <label for="Id"> Id: </label>
-    <input id="Id" [(ngModel)]="teacher.Id" name="Id">
+    <input id="Id" [(ngModel)]="teacher.Id" name="Id" #teacherid="ngModel" required minlength="3">
+    @if(teacherid.touched && teacherid.hasError('required')){
+    <small class="error-invalid">id must be required</small>
+    }
+    @if(teacherid.touched && teacherid.hasError('minlength')){
+    <small class="error-invalid">id must long than 3 digits</small>
+    }
+
 
     <label for="Name"> Name: </label>
-    <input id="Name" [(ngModel)]="teacher.Name" name="Name">
+    <input id="Name" [(ngModel)]="teacher.Name" name="Name" #teachername="ngModel" required minlength="3">
+    @if(teachername.touched && teachername.hasError('required')){
+    <small class="error-invalid">name must be required</small>
+    }
+    @if(teachername.touched && teachername.hasError('minlength')){
+    <small class="error-invalid">name must long than 3 letters</small>
+    }
+
 
     <label for="Classes"> Classes: </label>
-    <input id="Classes" [(ngModel)]="teacher.classes" name="Classes">
-  
-<button type="submit">Add Teacher</button>
+    <input id="Classes" [(ngModel)]="teacher.classes" #classes1="ngModel" name="Classes" required>
+    @if(classes1.touched && classes1.hasError('required')){
+        <small class="error-invalid">classlist must be required</small>
+    }
+
+    <button type="submit" [disabled]="myForm.invalid">Add Teacher</button>
 </form>
 
 
 
 <div style="color: red; font-size: 40px;">Teacher List</div>
 @for (item of TeacherList; track item) {
-    <div></div>
-    <div></div>
-    {{item.Id}}  -  {{item.Name}}  --  {{item.classes}}
+<div></div>
+<div></div>
+{{item.Id}} - {{item.Name}} -- {{item.classes}}
 }
