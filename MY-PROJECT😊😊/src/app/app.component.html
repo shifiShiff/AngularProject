@@ -3,10 +3,14 @@
 {{ShowBless()}}!
 {{title}}
 
-<app-student-list></app-student-list>
 
-<app-template-driven-forms></app-template-driven-forms>
-
-<app-icons-from-text></app-icons-from-text>
-
+<nav>
+    <a routerLink="/" routerLinkActive="active" >Home </a>
+    <a routerLink="/courses" routerLinkActive="active" >courses </a>
+    <a routerLink="/forms" routerLinkActive="active" >forms </a>
+    <a routerLink="/icons" routerLinkActive="active" >icons </a>
+    <a routerLink="/teachers" routerLinkActive="active" >teachers </a>
+    
+</nav>
+<router-outlet></router-outlet>
 

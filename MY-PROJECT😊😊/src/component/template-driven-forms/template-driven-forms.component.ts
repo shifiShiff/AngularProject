@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TeacherService } from '../../Serices/teacher.service';
+import { TeacherService } from '../../Services/teacher.service';
 import { Teacher } from '../../modals/Teacher';
 import { FormsModule } from '@angular/forms';
 import { JsonPipe } from '@angular/common';

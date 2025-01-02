@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { StudentListComponent } from '../component/student-list/student-list.component';
 import { TemplateDrivenFormsComponent } from "../component/template-driven-forms/template-driven-forms.component";
 import { IconsFromTextComponent } from "../component/icons-from-text/icons-from-text.component";
+import { ReactiveFormComponent } from '../component/reactive-form/reactive-form.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, StudentListComponent, TemplateDrivenFormsComponent, IconsFromTextComponent],
+  imports: [CommonModule,RouterLink,RouterLinkActive, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

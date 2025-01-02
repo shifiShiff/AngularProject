@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { Course } from '../../modals/Course';
-import { CoursesListService } from '../../Serices/courses-list.service';
+import { CoursesListService } from '../../Services/courses-list.service';
 import { CorsesStyleDirective } from '../../directives/corses-style.directive';
 
 

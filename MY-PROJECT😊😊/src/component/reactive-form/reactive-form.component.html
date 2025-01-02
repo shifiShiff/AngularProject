@@ -1,0 +1,24 @@
+
+<form [formGroup]="teacherFrom" (ngSubmit)="onSubmit()">
+
+    <label for="id">Id:</label>
+    <input id="id" type="number" formControlName="id">
+    
+    <label for="name">Name:</label>
+    <input id="name" type="text" formControlName="name">
+
+    <label for="classes">Classes:</label>
+    <input id="classes" formControlName="classes">
+
+    <button  type="submit" [disabled]="teacherFrom.invalid">Add Teacher</button>
+
+
+</form>
+
+
+<div style="color: red; font-size: 40px;">Teacher List reactive</div>
+@for (item of teachers; track item) {
+<div></div>
+<div></div>
+{{item.Id}} - {{item.Name}} -- {{item.classes}}
+}
