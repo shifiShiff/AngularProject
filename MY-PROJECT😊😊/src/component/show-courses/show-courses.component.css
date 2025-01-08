@@ -1,0 +1,13 @@
+.long{
+    background-color: red;
+}
+*{
+    padding-top: 1px;
+}
+
+.mat-tree-node{
+    background-color: rgb(26, 106, 243);
+}
+.my-long{
+    background-color: rgb(53, 69, 102);
+}

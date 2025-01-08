@@ -15,6 +15,7 @@ export class Course{
             public IdCourses:number,
             public NameCourses: String,
             public Subject:ESubject
+            // public lessons:string[]| null
             
 
     ) {}
