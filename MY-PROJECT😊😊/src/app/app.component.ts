@@ -5,11 +5,12 @@ import { StudentListComponent } from '../component/student-list/student-list.com
 import { TemplateDrivenFormsComponent } from "../component/template-driven-forms/template-driven-forms.component";
 import { IconsFromTextComponent } from "../component/icons-from-text/icons-from-text.component";
 import { ReactiveFormComponent } from '../component/reactive-form/reactive-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule,RouterLink,RouterLinkActive, RouterOutlet],
+  imports: [CommonModule,RouterLink,RouterLinkActive, RouterOutlet,HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
