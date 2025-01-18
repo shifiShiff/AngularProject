@@ -1,0 +1,6 @@
+
+<form [formGroup]="SignInForm" (ngSubmit)="onSubmit()">
+    <label>email: </label>
+    <input type="email" id="email" formControlName="email">
+    <button type="submit">send</button>
+</form>

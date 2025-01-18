@@ -5,6 +5,9 @@ import { IconsFromTextComponent } from "../component/icons-from-text/icons-from-
 import { ReactiveFormComponent } from '../component/reactive-form/reactive-form.component';
 import { ShowCoursesComponent } from '../component/show-courses/show-courses.component';
 import { APIComponent } from '../component/api/api.component';
+import { DashboardComponent } from '../component/dashboard/dashboard.component';
+import { LoginComponent } from '../component/login/login/login.component';
+import { authGuard } from '../guards/auth.guard';
 
 export const routes: Routes = [
     {path:'courses', component:StudentListComponent},
@@ -12,5 +15,8 @@ export const routes: Routes = [
     {path:'icons', component:IconsFromTextComponent},
     {path:'teachers', component:ReactiveFormComponent},
     {path:'showCourses', component:ShowCoursesComponent},
-    {path:'events', component:APIComponent}
+    {path:'events', component:APIComponent},
+    {path:'dashboard', component:DashboardComponent, canActivate:[authGuard]},
+    {path:'login', component:LoginComponent},
+    
 ];

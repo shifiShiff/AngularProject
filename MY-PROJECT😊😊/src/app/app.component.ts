@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
 import { StudentListComponent } from '../component/student-list/student-list.component';
 import { TemplateDrivenFormsComponent } from "../component/template-driven-forms/template-driven-forms.component";
 import { IconsFromTextComponent } from "../component/icons-from-text/icons-from-text.component";
@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule,RouterLink,RouterLinkActive, RouterOutlet,HttpClientModule],
+  imports: [CommonModule,RouterLink,RouterLinkActive, RouterOutlet,HttpClientModule,RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
