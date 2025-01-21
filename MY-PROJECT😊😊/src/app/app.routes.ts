@@ -8,6 +8,7 @@ import { APIComponent } from '../component/api/api.component';
 import { DashboardComponent } from '../component/dashboard/dashboard.component';
 import { LoginComponent } from '../component/login/login/login.component';
 import { authGuard } from '../guards/auth.guard';
+import { UserDetailsComponent } from '../component/user-details/user-details.component';
 
 export const routes: Routes = [
     {path:'courses', component:StudentListComponent},
@@ -18,5 +19,6 @@ export const routes: Routes = [
     {path:'events', component:APIComponent},
     {path:'dashboard', component:DashboardComponent, canActivate:[authGuard]},
     {path:'login', component:LoginComponent},
+    {path:'allUsers/:userid', component:UserDetailsComponent},
     
 ];

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { emit } from 'process';
 import { AuthService } from '../../../Services/auth.service';
 
@@ -12,15 +12,19 @@ import { AuthService } from '../../../Services/auth.service';
 })
 export class LoginComponent {
 
-  constructor(private fb:FormBuilder, private authservice:AuthService){}
+  constructor(private fb: FormBuilder, private authservice: AuthService) { }
 
-  SignInForm=this.fb.group({
-    email:['',[Validators.required, Validators.email]]
+  SignInForm: FormGroup = this.fb.group({
+    id: ['', [Validators.required]],
+    name: ['', [Validators.required]]
   })
 
-onSubmit(){
-if(this.SignInForm.valid)
-  this.authservice.SignIn();
+  onSubmit() {
+    if (this.SignInForm.valid) {
+      console.log(this.SignInForm.get('id')?.value);
+      
+      this.authservice.SignIn(this.SignInForm.get('id')?.value);
+    }
   }
 
 
