@@ -29,7 +29,8 @@ export class AuthService {
   
   SignIn(id: number) {
     id=Number(id);
-    if (this.getUserByID(id)) {      
+    if (this.getUserByID(id)) {     
+      localStorage.setItem("userId",id.toString()); 
       this.isAuth = true;
       this.router.navigate(['/dashboard']);
     }
@@ -38,6 +39,7 @@ export class AuthService {
   }
   SignOut() {
     this.isAuth = false;
+    localStorage.removeItem("userId");
     this.router.navigate(['/login'])
   }
 }
